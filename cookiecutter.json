@@ -1,0 +1,32 @@
+{
+  "project_name": "default_flask_project",
+
+  "config":{
+      "server":{
+      "root":"default/root",
+      "tmp":"default/tmp"
+    },
+    "servers":{
+      "environment":"DEV"
+    },
+    "flask_env":{
+      "Debug":"True",
+      "secret_key":"default_secret_key",
+      "session_permanent":"False",
+      "session_type":"default_session_type",
+      "session_lifetime":1800,
+      "sqldburi":"default_db_uri",
+      "sqltrackmodification":"False"
+    },
+    "filestorage":{
+      "hostname":"default_hostname",
+      "dbname":"FSDBname",
+      "username":"FSDBusername",
+      "password":"FSDBpassword"
+    },
+    "other":{
+      "font_family":"Arial,Open Sans"
+    }
+  }
+  
+}
