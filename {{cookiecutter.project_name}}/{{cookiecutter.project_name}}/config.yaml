@@ -1,50 +1,31 @@
 server:
   paths:
-    root: {{cookiecutter.config.server.root}}
-    temp: {{cookiecutter.config.server.tmp}}
+    # root: 
+    # temp: 
 
 # Next section covers other servers that application connects to over http(s)
 servers:
-  environment: {{cookiecutter.config.servers.environment}}
+  # environment: 
 
 # Values in next section will be directly sent to Flask's configuration
 #   Flask expects them to all be UPPERCASE
 flask:
-  DEBUG: {{cookiecutter.config.flask_env.Debug}}
-  SECRET_KEY: {{cookiecutter.config.flask_env.secret_key}}
-  SESSION_PERMANENT: {{cookiecutter.config.flask_env.session_permanent}}
-  SESSION_TYPE: {{cookiecutter.config.flask_env.session_type}}
-  PERMANENT_SESSION_LIFETIME: {{cookiecutter.config.flask_env.session_lifetime}}
-  SQLALCHEMY_DATABASE_URI: {{cookiecutter.config.flask_env.sqldburi}}
-  SQLALCHEMY_TRACK_MODIFICATIONS: {{cookiecutter.config.flask_env.sqltrackmodification}}
+# application database secret keys etc need to configure here
+  DEBUG: True
   DATABASE_CONNECT_OPTIONS: {}
 
 # Report Broker Database
 # report_broker:
-#   hostname: hstdbstest.ad.wwts.com
-#   dbname: APPDB
-#   username: RptBrokerAPP
-#   password: 99PN7v7
+
 
 # FileStorage Database
-filestorage:
-  hostname: {{cookiecutter.config.filestorage.hostname}}
-  dbname: {{cookiecutter.config.filestorage.dbname}}
-  username: {{cookiecutter.config.filestorage.username}}
-  password: {{cookiecutter.config.filestorage.password}}
-
-# documentation:
-#   no_part_no_attach: /opt/wwts/docs/user_guides/UserGuide__no_part_no_attach.pdf
-#   with_part_no_attach: /opt/wwts/docs/user_guides/UserGuide__with_part_no_attach.pdf
-#   no_part_with_attach: /opt/wwts/docs/user_guides/UserGuide__no_part_with_attach.pdf
-#   with_part_with_attach: /opt/wwts/docs/user_guides/UserGuide__with_part_with_attach.pdf
+# filestorage:
+#  configure file storage db here
 
 # attachments:
-#   upload_dir: /opt/wwts/tmp/filestorage
-#   link: https://techportaltest.wwts.com/DocDBWeb/GetDocument.aspx?CustCode=<CUSTCODE>&KeyType=WO&KeyValue=<WO_ID>
-#   base_url: https://techportaltest.wwts.com/DocDBWeb/GetDocument.aspx?
+#   configure attachements here
 
 
 # These values do not fit into any other section
 other:
-  font_family: {{cookiecutter.config.other.font_family}}
+  font_family: Arial,Open Sans

@@ -1,8 +1,6 @@
 
 from flask import Flask
 
-from {{cookiecutter.project_name}} import config
-
 def register_blueprints(app):
     pass
 
@@ -17,9 +15,9 @@ def register_errorhandlers(app):
     def check_session():
         pass
 
-    @app.errorhandler(CSRFError)
-    def csrf_error(error):
-        pass
+    # @app.errorhandler(CSRFError)
+    # def csrf_error(error):
+    #     pass
 
     @app.errorhandler(401)
     def unauthorized(error):
@@ -53,8 +51,6 @@ def register_errorhandlers(app):
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_mapping(config.cwa.flask)
-
     register_extensions(app)
     register_blueprints(app)
     register_errorhandlers(app)
@@ -63,3 +59,5 @@ def create_app():
         pass
 
     return app
+
+create_app()
