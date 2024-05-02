@@ -1,5 +1,6 @@
 
 from flask import Flask
+import logs
 
 def register_blueprints(app):
     pass
@@ -54,6 +55,7 @@ def create_app():
     register_extensions(app)
     register_blueprints(app)
     register_errorhandlers(app)
+    logs.setup_logging(app)
     with app.app_context():
         # db.create_all()
         pass
