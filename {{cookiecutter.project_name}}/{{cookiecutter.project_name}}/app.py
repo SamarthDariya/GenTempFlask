@@ -1,6 +1,10 @@
 
 from flask import Flask
+from flask_wtf.csrf import CSRFError
+from flask_wtf.csrf import CSRFProtect
 import logs
+
+
 
 def register_blueprints(app):
     pass
@@ -16,9 +20,9 @@ def register_errorhandlers(app):
     def check_session():
         pass
 
-    # @app.errorhandler(CSRFError)
-    # def csrf_error(error):
-    #     pass
+    @app.errorhandler(CSRFError)
+    def csrf_error(error):
+        pass
 
     @app.errorhandler(401)
     def unauthorized(error):
@@ -52,6 +56,8 @@ def register_errorhandlers(app):
 
 def create_app():
     app = Flask(__name__)
+    csrf = CSRFProtect()
+    csrf.init_app(app)
     register_extensions(app)
     register_blueprints(app)
     register_errorhandlers(app)
